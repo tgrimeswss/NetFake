@@ -1,0 +1,46 @@
+body {
+  background-color: black;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+
+.searchElement {
+  text-align: center;
+  margin: 30px;
+}
+
+#searchBox:focus {
+  outline:0;
+  font-size: 30px;
+}
+
+#searchBox::placeholder {
+  color: white;
+}
+
+#actors{
+  color:white;
+}
+
+#searchBox {
+  width:100%;
+  border-radius:20px;
+  padding:10px;
+  text-align: center;
+  background-color: red;
+  color:white;
+  border: solid #930016 2px;
+}
+
+.posterBox {
+  text-align: center;
+}
+
+#title {
+  color: white;
+  font-size: 30px;
+}
