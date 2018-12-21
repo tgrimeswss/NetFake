@@ -17,10 +17,10 @@ searchBox.addEventListener('keyup',function(e){
     poster.src=""
     title.innerHTML=""
     return
+  } else {
+    //Every time the event listener fires, it will call 'getMovie()'
+    getMovie(e.target.value)
   }
-
-  //Every time the event listener fires, it will call 'getMovie()'
-  getMovie(e.target.value)
 })
 
 
@@ -28,7 +28,7 @@ searchBox.addEventListener('keyup',function(e){
 function getMovie(input){
   fetch(`http://www.omdbapi.com/?apikey=${apiKey}&${key}=${input}`)
   .then(function(response) {
-    return response.json();
+    return response.json()
   })
   .then(function(data) {
     makeMovie(data)
@@ -36,14 +36,13 @@ function getMovie(input){
 }
 
 function makeMovie(movie){
-  console.log(movie)
   if(movie.Error==='Movie not found!'){
     poster.src="images/cantFind.jpg"
     title.innerHTML = ''
     return
+  } else {
+    title.innerHTML = movie.Title
+    actors.innerHTML = movie.Actors
+    poster.src = movie.Poster    
   }
-  title.innerHTML = movie.Title
-  actors.innerHTML = movie.Actors
-  poster.src = movie.Poster
-
 }
